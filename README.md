@@ -7,8 +7,6 @@ Pneumonia is an infection that inflames the air sacs in one or both lungs. The a
 The target is to use algorithms to classify medical images for assistance in diagnosis, treatment planning, and disease monitoring.Our project aims to create an image classifier for pneumonia detection using machine learning techniques. Pneumonia is a common and sometimes fatal respiratory illness, and early identification is critical for optimal treatment and patient outcomes. Our key objective is to build a strong classifier capable of correctly recognizing pneumonia in chest X-ray pictures using convolutional neural networks (CNNs) and sophisticated image processing methods.
 ![alt text](image-4.png)
 
-![alt text](image-5.png)
-
 ## Business Problem:
 
 Kenyatta National Hospital (KNH) is currently facing a significant challenge due to an ongoing strike among healthcare workers. This strike has resulted in a shortage of staff, particularly in the radiology department, where the interpretation of chest X-ray images is crucial for diagnosing cases such as pneumonia. Despite being one of the largest referral hospitals in Kenya, KNH struggles with timely and accurate diagnosis due to limited radiology resources, high patient volumes, and manual interpretation of chest X-ray images by healthcare professionals.
@@ -24,13 +22,16 @@ The images we used for our project were sourced from (Kaggle link)
 The nearly 6000 images are classified into two categories: Normal or Pneumonia.
 As provided by Kaggle, the images are divided into three subsets:
 
-- train - 5,216 images
+train - 5,216 images:
+
 ![alt text](image.png)
 
-- validate - 16 images
+validate - 16 images:
+
 ![alt text](image-1.png)
 
-- test - 624 images
+test - 624 images:
+
 ![alt text](image-2.png)
 ## Modeling and Results:
 
