@@ -40,4 +40,3 @@ test - 624 images:
 ## Modeling and Results:
 
 ## Evaluation:
-## Conclusions and Recommendations:
