@@ -2,18 +2,6 @@
 IMAGE CLASSIFIER FOR PNEUMONIA DETECTION
 ![alt text](image-3.png)
 
-## Phase 4 Project Submission
-
-GROUP 1:
-Student name: Thorne Makau
-Student name: Collins Cheruiyot
-Student name: Jeremy Ngugi (Group Leader)
-Student name: Margaret Thiga
-Student name: Joyce Muthuani
-Student name: Amina Hagi
-
-Scheduled project review date/time: April 12th 2024
-
 ## Table of Contents:
 1. Overview
 2. Business Understanding
