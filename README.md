@@ -12,11 +12,10 @@ IMAGE CLASSIFIER FOR PNEUMONIA DETECTION
 7. Recommendation
 
 ## Overview:
-Generally, our project aims to leverage machine learning and deep learning techniques to develop an accurate and efficient tool for pneumonia detection from chest X-ray images. By automating this process, the classifier can assist healthcare professionals in making timely and informed decisions, ultimately improving patient outcomes and healthcare efficiency.
+Artificial Intelligence (A.I.) has rapidly expanded in recent years and is now being used in many industries, including healthcare. In medical imaging, one important task is classification, where images like X-rays or MRI scans are sorted into categories based on factors like what's shown in the image or if certain conditions are present. The goal is to use algorithms to help diagnose, plan treatments, and monitor diseases. The challenge lies in accurately classifying these images, which is where deep learning models and neural networks are valuable.
 
 ## Business Understanding:
-Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing.
-Patients presenting with difficulty in breathing or presenting other respiratory symptoms for pneumonia in the emergency department are usually given a chest Xray. They have the advantage of lower radiation exposure, faster feasibility and better equipment portability compared to other imaging modalities such as computed tomography (CT). This diagnostic examination can provide supplemental and timely information regarding a patient’s cardiopulmonary condition and probable changes from any infectious process. Studies have shown that with faster reporting of pneumonia in Chest radiographs, the median length of hospital stays is significantly shorter, the likelihood of receiving appropriate therapy is higher, and the probability of infectious spread is lower.
+Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. Patients presenting with difficulty in breathing or presenting other respiratory symptoms for pneumonia in the emergency department are usually given a chest Xray. They have the advantage of lower radiation exposure, faster feasibility and better equipment portability compared to other imaging modalities such as computed tomography (CT). This diagnostic examination can provide supplemental and timely information regarding a patient’s cardiopulmonary condition and probable changes from any infectious process. Studies have shown that with faster reporting of pneumonia in Chest radiographs, the median length of hospital stays is significantly shorter, the likelihood of receiving appropriate therapy is higher, and the probability of infectious spread is lower.
 
 However, the interpretation of CR examinations is variable and examiner-dependent. To increase the sensitivity and specificity of imaging patterns for pneumonia in Chest xrays, deep learning (DL) algorithms must become more prevalent. Prior studies have shown that the use of artificial intelligence (AI) significantly improves the detection of pneumonia in Chest radiographs.
 
@@ -37,13 +36,12 @@ The overarching goal is to provide a solution that can alleviate the strain on t
 Our mission is to empower KNH with the tools and resources needed to overcome the challenges posed by the ongoing strike and continue delivering high-quality healthcare to patients in need. Through our collaboration, we strive to make a positive impact on patient care and outcomes at Kenyatta National Hospital.
 
 ## Data Understanding:
-The images we used for our project were sourced from https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
-The dataset is organized into 3 folders (train, test, val) and contains subfolders for each image category (Pneumonia/Normal). There are 5,856 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
-
-Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care.
-
-The nearly 6000 images are classified into two categories: Normal or Pneumonia.
-As provided by Kaggle, the images are divided into three subsets:
+- The dataset used for our project was sourced from https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+- It contains Chest X-ray images (anterior-posterior) which were selected from retrospective cohorts of paediatric patients of one to five years old from Guangzhou Women and Children’s Medical Centre, Guangzhou.
+- All chest X-ray imaging was performed as part of patients’ routine clinical care.
+- The dataset is organized into 3 folders (train, test, validation) and contains subfolders for each image category (Pneumonia/Normal). 
+- There are 5,856 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).
+- As provided by Kaggle, the images are divided into three subsets:
 
 train - 5,216 images:
 
@@ -76,21 +74,11 @@ Over 163 batches processed in 116 seconds (around 714ms per step), the model att
 ## Conclusions:
 The exploration featured two primary models: a Transfer Learning model leveraging the ResNet50 architecture for feature extraction coupled with custom layers for the classification task, and a Custom CNN Model constructed from scratch, which incorporated a variety of data augmentation strategies. Among these, after a thorough comparison based on final test accuracies, the Custom CNN Model emerged as the superior model, showcasing the highest test accuracy and signifying a robust performance on the test dataset. This was achieved without specific fine-tuning processes but through the effective use of extensive data augmentation.
 
- Given more time we may, through more tweaking of the hyper parameters, be able to find a more successful model. Our final step is to get the model and the portable X-Ray machines into the hands of people who need them.
-
-
 ## Recommendations: 
 -  *Further Hyperparameter Tuning:* Allocate additional time and resources to fine-tune the hyperparameters of the Custom CNN Model. This may involve exploring different configurations to optimize performance further.
 - *Evaluation of Alternative Architectures:* While the Custom CNN Model showed promising results, consider exploring alternative architectures beyond ResNet50 and the Custom CNN Model. This could involve experimenting with different pre-trained models or novel architectures to potentially improve performance.
 - *Integration with Portable X-Ray Machines:* Efforts should be made to seamlessly integrate the trained Custom CNN Model with portable X-ray machines. This integration will enable healthcare professionals to quickly analyze X-ray images on-site, facilitating timely diagnosis and treatment decisions, especially in remote or resource-constrained areas.
 
 ## Limitations
-The performance of CNN models is greatly improved with the use of more data (images) in the training process. Although the available data used for this project is limited, an attempt to generate more training data by creating augmented images from the given image collection may provide sufficient to achieve improved results.
-In an effort to reduce training times, only a limited number of models were attempted. Running additional models with greater levels of complexity & a greater number of hyperparameters adjusted, may have eventually yielded a more precise model.
-
-## Outline Approach
-Data Acquisition and Preprocessing - This involves use of representative data that contains both healthy and pneumonia-infected cases. We annotate the images with labels indicating the presence or absence of pneumonia. We also enhance image quality and consistency by resizing, normalization/standardizations of values to a common range, facilitating better training for the deep learning model and reduction of noise to improve the model's ability to identify the true underlying structures in the X-ray.
-Model Development - This involves selection of a suitable deep learning architecture such as Convolutional Neural Network(CNN) that has had good traction in medical image analysis. We then train the model on the preprocessed dataset, splitting it into training, vaidation, and tests sets. We also address class imbalance, if any, by data augmentation to artificially expand the training data then monitor the training process by adjusting parameters for optimal performance.
-Model Evaluation - In the model evaluation phase, we assess the performance of the trained models using key metrics such as accuracy and confusion matrices. Through the interpretation of these metrics, we gain insights into the models' efficacy in distinguishing between normal and pneumonia cases in X-ray images. Additionally, visualization techniques are employed to dissect the models' predictions, providing valuable insights into their strengths and weaknesses. This comprehensive analysis allows for informed decisions regarding model refinement and optimization, ultimately ensuring the development of robust classifiers for accurate binary image classification.
-Interpretation and Deployment - We explore techniques for explaining the model's decision-making process for instance, saliency maps, class activation maps to gain insights into how it differentiates between healthy and pneumonia-infected X-rays. If the model achieves satisfactory performance, consider deploying it in a controlled clinical environment for further validation and potential real-world use cases.
-
+- The performance of CNN models is greatly improved with the use of more data (images) in the training process. Although the available data used for this project is limited, an attempt to generate more training data by creating augmented images from the given image collection may provide sufficient to achieve improved results.
+- In an effort to reduce training times, only a limited number of models were attempted. Running additional models with greater levels of complexity & a greater number of hyperparameters adjusted, may have eventually yielded a more precise model.
