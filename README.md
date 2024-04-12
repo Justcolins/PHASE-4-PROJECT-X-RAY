@@ -2,6 +2,18 @@
 IMAGE CLASSIFIER FOR PNEUMONIA DETECTION
 ![alt text](image-3.png)
 
+## Phase 4 Project Submission
+
+GROUP 1:
+Student name: Thorne Makau
+Student name: Collins Cheruiyot
+Student name: Jeremy Ngugi (Group Leader)
+Student name: Margaret Thiga
+Student name: Joyce Muthuani
+Student name: Amina Hagi
+
+Scheduled project review date/time: April 12th 2024
+
 ## Table of Contents:
 1. Overview
 2. Business Understanding
@@ -83,3 +95,14 @@ The exploration featured two primary models: a Transfer Learning model leveragin
 -  *Further Hyperparameter Tuning:* Allocate additional time and resources to fine-tune the hyperparameters of the Custom CNN Model. This may involve exploring different configurations to optimize performance further.
 - *Evaluation of Alternative Architectures:* While the Custom CNN Model showed promising results, consider exploring alternative architectures beyond ResNet50 and the Custom CNN Model. This could involve experimenting with different pre-trained models or novel architectures to potentially improve performance.
 - *Integration with Portable X-Ray Machines:* Efforts should be made to seamlessly integrate the trained Custom CNN Model with portable X-ray machines. This integration will enable healthcare professionals to quickly analyze X-ray images on-site, facilitating timely diagnosis and treatment decisions, especially in remote or resource-constrained areas.
+
+## Limitations
+The performance of CNN models is greatly improved with the use of more data (images) in the training process. Although the available data used for this project is limited, an attempt to generate more training data by creating augmented images from the given image collection may provide sufficient to achieve improved results.
+In an effort to reduce training times, only a limited number of models were attempted. Running additional models with greater levels of complexity & a greater number of hyperparameters adjusted, may have eventually yielded a more precise model.
+
+## Outline Approach
+Data Acquisition and Preprocessing - This involves use of representative data that contains both healthy and pneumonia-infected cases. We annotate the images with labels indicating the presence or absence of pneumonia. We also enhance image quality and consistency by resizing, normalization/standardizations of values to a common range, facilitating better training for the deep learning model and reduction of noise to improve the model's ability to identify the true underlying structures in the X-ray.
+Model Development - This involves selection of a suitable deep learning architecture such as Convolutional Neural Network(CNN) that has had good traction in medical image analysis. We then train the model on the preprocessed dataset, splitting it into training, vaidation, and tests sets. We also address class imbalance, if any, by data augmentation to artificially expand the training data then monitor the training process by adjusting parameters for optimal performance.
+Model Evaluation - In the model evaluation phase, we assess the performance of the trained models using key metrics such as accuracy and confusion matrices. Through the interpretation of these metrics, we gain insights into the models' efficacy in distinguishing between normal and pneumonia cases in X-ray images. Additionally, visualization techniques are employed to dissect the models' predictions, providing valuable insights into their strengths and weaknesses. This comprehensive analysis allows for informed decisions regarding model refinement and optimization, ultimately ensuring the development of robust classifiers for accurate binary image classification.
+Interpretation and Deployment - We explore techniques for explaining the model's decision-making process for instance, saliency maps, class activation maps to gain insights into how it differentiates between healthy and pneumonia-infected X-rays. If the model achieves satisfactory performance, consider deploying it in a controlled clinical environment for further validation and potential real-world use cases.
+
